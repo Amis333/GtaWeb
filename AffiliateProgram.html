@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affiliate Program</title>
     <link rel="stylesheet" href="style.css">
-    <title>Grand buy auto</title>
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -37,32 +37,27 @@
             </div>
         </header>
 
-        <div class="main">
-            <section class="tradeIn">
-                <div class="tradIn__about">
-                    <div class="text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui similique quas deserunt in
-                        doloremque dignissimos, sapiente, quis, quo et reiciendis dolor id facilis eos totam nobis
-                        optio. Distinctio est a quisquam minus nihil, maxime natus, fugiat animi minima unde tempora
-                        quasi praesentium possimus aliquam exercitationem quod ipsum. Aliquid neque fugit explicabo
-                        itaque sed veritatis? Officiis autem veniam assumenda facilis consequuntur quae numquam,
-                        similique dolorem adipisci quidem reprehenderit fugiat quibusdam a modi? Corrupti ut omnis
-                        commodi rem non, asperiores cum quasi blanditiis quo pariatur modi ab impedit, praesentium esse
-                        hic accusamus exercitationem cupiditate voluptate inventore voluptatibus labore veritatis?
-                        Nihil, non commodi.
-                    </div>
-
-                    <div class="links">
-                        <ul class="menu__list">
-                            <li class="menu_list-item"><a class='menu__list-link links__li' href="catalog.html">Каталог</a>
-                            </li>
-                            <li class="menu_list-item"><a class='menu__list-link links__li'
-                                    href="AffiliateProgram.html">Задать вопрос</a></li>
-                        </ul>
+        <section class="main">
+            <p class="afprog__text">
+                Оставте здесь ваш вопрос или предложение.
+            </p>
+            <div class="container__join">
+                <div class="join__form">
+                    <div class="join__form-row">
+                        <div class="join__form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" value="" placeholder="Name">
+                        </div>
+                        <div class="join__form-group">
+                            <label for="message">Ваше сообщение:</label>
+                            <textarea id="message" cols="30" rows="5" placeholder="Введите сообщение..."></textarea>
+                        </div>
+                        <button type="button" onclick="subMail()" class="join__btn btn">Submit</button>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
+
 
         <footer class="footer">
             <div class="container&#45;&#45;foot">
@@ -91,6 +86,7 @@
 
     <script src="scripts/jquery.js"></script>
     <script src="scripts/script.js"></script>
+
 </body>
 
 </html>
