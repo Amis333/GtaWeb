@@ -87,8 +87,6 @@ const catalogItems = [
     },
 ]
 
-sortName()
-
 let cardItem = ''
 let productContentBody = document.getElementById('product_content-body')
 
