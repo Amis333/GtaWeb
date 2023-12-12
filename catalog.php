@@ -1,10 +1,6 @@
 <?php
-require_once('db.php');
-$result = $conn->query('SELECT * FROM `carsdata`');
-$carsData = array();
-while ($row = $result->fetch_assoc()) {
-    $carsData[] = $row;
-}
+require_once('addtable.php');
+require_once('search.php');
 ?>
 
 <!DOCTYPE html>
@@ -46,21 +42,39 @@ while ($row = $result->fetch_assoc()) {
         </header>
 
         <section class="main">
-            
+            <form class="form_search" method="post" id="searchform"> 
+                <input class="form_search-text" type="text" name="search"> 
+                <input class="form_search-submit" type="submit" name="submit" value="Search"> 
+            </form> 
+
             <section class="product__container">
                 <div class="product_content">
                     <div class="product_content-body" id="product_content-body">
                         <?php
-                            for ($i = 0; $i < count($carsData); $i++) {
-                                echo "<div class=\"product_content-card\">";
-                                    echo "<a href=\"#\" class=\"product_content-link\">";
-                                        echo '<img src="images/'.$carsData[$i]["img"].'" alt="Фото" class="product_content-img">';
-                                        echo '<span class="product_content-about">';
-                                            echo '<h3>'.$carsData[$i]["title"].'</h3>';
-                                            echo '<span class="price">Цена: '.$carsData[$i]["price"].' рублей</span>';
-                                            echo '</span>';
-                                        echo '</a>';
-                                    echo '</div>';
+                            if (isset($_POST['submit'])) {
+                                for ($i = 0; $i < count($carsDataSearch); $i++) {
+                                    echo "<div class=\"product_content-card\">";
+                                        echo "<a href=\"#\" class=\"product_content-link\">";
+                                            echo '<img src="images/'.$carsDataSearch[$i]["img"].'" alt="Фото" class="product_content-img">';
+                                            echo '<span class="product_content-about">';
+                                                echo '<h3>'.$carsDataSearch[$i]["title"].'</h3>';
+                                                echo '<span class="price">Цена: '.$carsDataSearch[$i]["price"].' рублей</span>';
+                                                echo '</span>';
+                                            echo '</a>';
+                                        echo '</div>';
+                                }
+                            } else {
+                                for ($i = 0; $i < count($carsData); $i++) {
+                                    echo "<div class=\"product_content-card\">";
+                                        echo "<a href=\"#\" class=\"product_content-link\">";
+                                            echo '<img src="images/'.$carsData[$i]["img"].'" alt="Фото" class="product_content-img">';
+                                            echo '<span class="product_content-about">';
+                                                echo '<h3>'.$carsData[$i]["title"].'</h3>';
+                                                echo '<span class="price">Цена: '.$carsData[$i]["price"].' рублей</span>';
+                                                echo '</span>';
+                                            echo '</a>';
+                                        echo '</div>';
+                                }
                             }
                         ?>
 
